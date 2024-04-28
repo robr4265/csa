@@ -32,7 +32,7 @@ dropdown = alt.binding_select(options=prev_by_sphere["characteristics"].unique()
 
 selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown)
 
-alt.Chart(prev_by_sphere).mark_bar().encode(
+chart = alt.Chart(prev_by_sphere).mark_bar().encode(
     x=alt.X('sphere', title='Sphere of Socialization'),
     y=alt.Y('mean', title='Prevalence of CSA (%)'),
     color=alt.Color('sex', scale=alt.Scale(scheme='spectral')),
@@ -40,5 +40,9 @@ alt.Chart(prev_by_sphere).mark_bar().encode(
 ).add_selection(selection).properties(
     width='container'
 )
+
+filtered_chart = chart.transform_filter(selection)
+
+filtered_chart
 
 # %%
