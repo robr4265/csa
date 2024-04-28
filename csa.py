@@ -27,7 +27,7 @@ print(prev_by_sphere)
 print(char_first_csa)
 
 # %%
-# Make the chart
+# Make the prevelence interactive chart
 dropdown = alt.binding_select(options=prev_by_sphere["characteristics"].unique(), name="caracteristics")
 
 selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown, value=[{'characteristics': 'Total prevalence'}])
@@ -36,16 +36,34 @@ chart = alt.Chart(prev_by_sphere).mark_bar().encode(
     x=alt.X('sphere', title='Sphere of Socialization'),
     y=alt.Y('mean', title='Prevalence of CSA (%)'),
     xOffset='sex',
-    color=alt.Color('sex', scale=alt.Scale(scheme='spectral')),
-    # opacity=alt.condition(selection, alt.value(1), alt.value(.2))
+    color=alt.Color('sex', scale=alt.Scale(scheme='category20')),
 ).add_selection(selection).properties(
     width='container'
 )
 
-filtered_chart = chart.transform_filter(selection)
+prev_chart = chart.transform_filter(selection)
 
-filtered_chart
+prev_chart
 
-filtered_chart.save('interaction.html', embed_options={'renderer': 'svg'})
+# filtered_chart.save('interaction.html', embed_options={'renderer': 'svg'})
 
+# Make the first csa interactive chart
+dropdown = alt.binding_select(options=char_first_csa["characteristics"].unique(), name="caracteristics")
+
+selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown, value=[{'characteristics': '0–9 age of first abuse'}])
+
+chart = alt.Chart(char_first_csa).mark_bar().encode(
+    x=alt.X('sphere', title='Sphere of Socialization'),
+    y=alt.Y('value', title='First CSA (%)')
+).add_selection(selection).properties(
+    width='container'
+)
+
+first_csa_chart = chart.transform_filter(selection)
+
+first_csa_chart
+
+# Save prev_chart and first_csa_chart in the same index.html
+combined_chart = alt.vconcat(prev_chart, first_csa_chart)
+combined_chart.save('index.html', embed_options={'renderer': 'svg'})
 # %%
