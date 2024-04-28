@@ -35,6 +35,7 @@ selection = alt.selection(type='single', fields=['characteristics'], bind=dropdo
 chart = alt.Chart(prev_by_sphere).mark_bar().encode(
     x=alt.X('sphere', title='Sphere of Socialization'),
     y=alt.Y('mean', title='Prevalence of CSA (%)'),
+    xOffset='sex',
     color=alt.Color('sex', scale=alt.Scale(scheme='spectral')),
     # opacity=alt.condition(selection, alt.value(1), alt.value(.2))
 ).add_selection(selection).properties(
@@ -44,5 +45,4 @@ chart = alt.Chart(prev_by_sphere).mark_bar().encode(
 filtered_chart = chart.transform_filter(selection)
 
 filtered_chart
-
 # %%
