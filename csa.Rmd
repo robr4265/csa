@@ -1,3 +1,9 @@
+---
+title: "CSA prevalence and age of first abuse"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: html_document
+---
+
 ```{r import_packages, include=FALSE}
 library(dplyr)
 library(readr)
@@ -5,14 +11,14 @@ library(tidyr)
 library(ggplot2)
 library(stringr)
 ```
-```{r import_data}
+```{r import_data, include=FALSE}
 prev_by_sex <- read_csv("sup_table_1.csv")
 head(prev_by_sex)
 
 char_first_csa <- read_csv("char_first_csa.csv")
 head(char_first_csa)
 ```
-```{r update_data}
+```{r update_data, include=FALSE}
 prev <- prev_by_sex %>%
   pivot_longer(
     cols = starts_with(c("any", "family", "church", "school")),
