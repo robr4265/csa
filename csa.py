@@ -36,14 +36,14 @@ chart = alt.Chart(prev_by_sphere).mark_bar().encode(
     x=alt.X('sphere', title='Sphere of Socialization'),
     y=alt.Y('mean', title='Prevalence of CSA (%)'),
     xOffset='sex',
-    color=alt.Color('sex', scale=alt.Scale(scheme='spectral')),
+    color=alt.Color('sex', scale=alt.Scale(scheme='category20')),
 ).add_selection(selection).properties(
     width='container'
 )
 
-filtered_chart = chart.transform_filter(selection)
+prev_chart = chart.transform_filter(selection)
 
-filtered_chart
+prev_chart
 
 # filtered_chart.save('interaction.html', embed_options={'renderer': 'svg'})
 
@@ -60,7 +60,7 @@ chart = alt.Chart(char_first_csa).mark_bar().encode(
     width='container'
 )
 
-filtered_chart = chart.transform_filter(selection)
+first_csa_chart = chart.transform_filter(selection)
 
-filtered_chart
+first_csa_chart
 # %%
