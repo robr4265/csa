@@ -22,7 +22,9 @@ prev <- prev_by_sex %>%
   pivot_wider(
     names_from = ci,
     values_from = value
-  )
+  ) %>%
+  filter(characteristics != "sample", characteristics != "Number of abused children", sphere != "any")
+
 write_csv(prev, "prevalence.csv")
 
 first <- char_first_csa %>%
@@ -30,7 +32,7 @@ first <- char_first_csa %>%
     cols = starts_with(c("any", "family", "church", "school")),
     names_to = c("sphere")
   )
-
+write_csv(first, "first_abuse.csv")
 ```
 
 ```{r plot_prev}

@@ -6,16 +6,13 @@ import altair as alt
 # https://journals-sagepub-com.colorado.idm.oclc.org/doi/10.1177/08862605221124263
 
 # %%
-# Read Prevalence of CSA by Sphere of Socialization and Sociodemographic Characteristics.
-prev_by_sphere = pd.read_csv('prev_csa_by_sphere.csv')
-# Note. Data are presented as % [95% CI]. CI = confidence interval; CSA = child sexual abuse.
 
 # Read Prevalence of CSA by Sphere of Socialization and Sociodemographic Characteristics.
-char_first_csa = pd.read_csv('char_first_csa.csv')
+char_first_csa = pd.read_csv('first_abuse.csv')
 # Note. Data are presented as %. CSA = child sexual abuse.
 
 # Read Prevalence of CSA by sphere of socialization, sex and sociodemographic characteristics.
-prev_by_sex_sphere = pd.read_csv('sup_table_1.csv')
+prev_by_sphere = pd.read_csv('prevalence.csv')
 # Note. Data are presented as % [95% CI]. CI = confidence interval; CSA = child sexual abuse.
 # Sample sizes:
 # Any: Women (n=14,694) Men (n=13,332)
@@ -30,26 +27,18 @@ print(prev_by_sphere)
 print(char_first_csa)
 
 # %%
-print(prev_by_sex_sphere)
+# Make the chart
+dropdown = alt.binding_select(options=prev_by_sphere["characteristics"].unique(), name="caracteristics") 
 
-# %%
-# Percentages of girls and boys reporting CSA sexual violence before the age of 18 years by socialization setting.
-# CSA = child sexual abuse.
+selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown)
 
-# Create a bar chart with error bars using Altair
-chart = alt.Chart(prev_by_sex_sphere).mark_bar().encode(
-    x='Sphere of Socialization',
-    y='Total pervalence',
-    color='Sex',
-    column='Sociodemographic Characteristics'
-).properties(
-    title='Prevalence of CSA by Sphere of Socialization, Sex, and Sociodemographic Characteristics'
+alt.Chart(prev_by_sphere).mark_bar().encode(
+    x=alt.X('sphere', title='Sphere of Socialization'),
+    y=alt.Y('mean', title='Prevalence of CSA (%)'),
+    color=alt.Color('sex', scale=alt.Scale(scheme='spectral')),
+    opacity=alt.condition(selection, alt.value(1), alt.value(.2))
+).add_selection(selection).properties(
+    width='container'
 )
 
-# Add error bars
-# chart = chart.mark_errorbar(extent='ci').encode(
-#     y='Prevalence of CSA:Q'
-# )
-
-# Display the chart
-# chart.show()
+# %%
