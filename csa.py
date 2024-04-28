@@ -47,7 +47,6 @@ prev_chart
 
 # filtered_chart.save('interaction.html', embed_options={'renderer': 'svg'})
 
-# %%
 # Make the first csa interactive chart
 dropdown = alt.binding_select(options=char_first_csa["characteristics"].unique(), name="caracteristics")
 
@@ -63,4 +62,8 @@ chart = alt.Chart(char_first_csa).mark_bar().encode(
 first_csa_chart = chart.transform_filter(selection)
 
 first_csa_chart
+
+# Save prev_chart and first_csa_chart in the same index.html
+combined_chart = alt.vconcat(prev_chart, first_csa_chart)
+combined_chart.save('index.html', embed_options={'renderer': 'svg'})
 # %%
