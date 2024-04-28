@@ -45,8 +45,7 @@ prev_chart = chart.transform_filter(selection)
 
 prev_chart
 
-# filtered_chart.save('interaction.html', embed_options={'renderer': 'svg'})
-
+# %%
 # Make the first csa interactive chart
 dropdown = alt.binding_select(options=char_first_csa["characteristics"].unique(), name="caracteristics")
 
@@ -63,7 +62,34 @@ first_csa_chart = chart.transform_filter(selection)
 
 first_csa_chart
 
-# Save prev_chart and first_csa_chart in the same index.html
-combined_chart = alt.vconcat(prev_chart, first_csa_chart)
-combined_chart.save('index.html', embed_options={'renderer': 'svg'})
+# %%
+two_charts_template = """
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<div id="vis1"></div>
+<div id="vis2"></div>
+
+<script type="text/javascript">
+  vegaEmbed('#vis1', {spec1}).catch(console.error);
+  vegaEmbed('#vis2', {spec2}).catch(console.error);
+</script>
+</body>
+</html>
+"""
+
+with open('charts.html', 'w') as f:
+    f.write(two_charts_template.format(
+        vega_version=alt.VEGA_VERSION,
+        vegalite_version=alt.VEGALITE_VERSION,
+        vegaembed_version=alt.VEGAEMBED_VERSION,
+        spec1=prev_chart.to_json(indent=None),
+        spec2=first_csa_chart.to_json(indent=None),
+    ))
 # %%
