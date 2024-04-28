@@ -28,15 +28,15 @@ print(char_first_csa)
 
 # %%
 # Make the chart
-dropdown = alt.binding_select(options=prev_by_sphere["characteristics"].unique(), name="caracteristics") 
+dropdown = alt.binding_select(options=prev_by_sphere["characteristics"].unique(), name="caracteristics")
 
-selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown)
+selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown, value=[{'characteristics': 'Total prevalence'}])
 
 chart = alt.Chart(prev_by_sphere).mark_bar().encode(
     x=alt.X('sphere', title='Sphere of Socialization'),
     y=alt.Y('mean', title='Prevalence of CSA (%)'),
     color=alt.Color('sex', scale=alt.Scale(scheme='spectral')),
-    opacity=alt.condition(selection, alt.value(1), alt.value(.2))
+    # opacity=alt.condition(selection, alt.value(1), alt.value(.2))
 ).add_selection(selection).properties(
     width='container'
 )
