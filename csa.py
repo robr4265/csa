@@ -45,4 +45,7 @@ chart = alt.Chart(prev_by_sphere).mark_bar().encode(
 filtered_chart = chart.transform_filter(selection)
 
 filtered_chart
+
+filtered_chart.save('interaction.html', embed_options={'renderer': 'svg'})
+
 # %%
