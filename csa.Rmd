@@ -1,0 +1,50 @@
+```{r import_packages, include=FALSE}
+library(dplyr)
+library(readr)
+library(tidyr)
+library(ggplot2)
+library(stringr)
+```
+```{r import_data}
+prev_by_sex <- read_csv("sup_table_1.csv")
+head(prev_by_sex)
+
+char_first_csa <- read_csv("char_first_csa.csv")
+head(char_first_csa)
+```
+```{r update_data}
+prev <- prev_by_sex %>%
+  pivot_longer(
+    cols = starts_with(c("any", "family", "church", "school")),
+    names_to = c("sphere", "sex", "ci"),
+    names_pattern = "(any|family|church|school)_(women|men)_ci_(mean|low|up)"
+  ) %>%
+  pivot_wider(
+    names_from = ci,
+    values_from = value
+  ) %>%
+  filter(characteristics != "sample", characteristics != "Number of abused children", sphere != "any")
+
+write_csv(prev, "prevalence.csv")
+
+first <- char_first_csa %>%
+  pivot_longer(
+    cols = starts_with(c("any", "family", "church", "school")),
+    names_to = c("sphere")
+  )
+write_csv(first, "first_abuse.csv")
+```
+
+```{r plot_prev}
+prev %>%
+  filter(characteristics == "Total prevalence", sphere != "any") %>%
+  ggplot(aes(x = sphere, y = mean, fill = sex)) +
+  geom_col(position = "dodge") +
+  geom_errorbar(aes(ymin = low, ymax = up), width = 0.1, position = position_dodge(0.9))
+```
+```{r plot_first}
+first %>%
+  filter(sphere == "church", str_detect(characteristics, "age of first abuse")) %>%
+  ggplot(aes(x = characteristics, y = value, fill = sphere)) +
+  geom_col(position = "dodge")
+```

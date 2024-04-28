@@ -1,0 +1,117 @@
+characteristics,sphere,value
+sample,any,3066
+sample,family,984
+sample,church,115
+sample,school,55
+Female Abuser,any,6.05
+Female Abuser,family,5
+Female Abuser,church,6.63
+Female Abuser,school,2.35
+Male Abuser,any,93.95
+Male Abuser,family,95
+Male Abuser,church,93.37
+Male Abuser,school,97.65
+0–9 age of first abuse,any,33.69
+0–9 age of first abuse,family,44.33
+0–9 age of first abuse,church,22.97
+0–9 age of first abuse,school,34.32
+10–13 age of first abuse,any,34.51
+10–13 age of first abuse,family,35.16
+10–13 age of first abuse,church,55.93
+10–13 age of first abuse,school,32.94
+14–17 age of first abuse,any,31.8
+14–17 age of first abuse,family,20.51
+14–17 age of first abuse,church,21.1
+14–17 age of first abuse,school,32.74
+1940–1969 year of first abuse,any,24.21
+1940–1969 year of first abuse,family,23.2
+1940–1969 year of first abuse,church,52.9
+1940–1969 year of first abuse,school,36.3
+1970–1989 year of first abuse,any,32.61
+1970–1989 year of first abuse,family,39.06
+1970–1989 year of first abuse,church,22.44
+1970–1989 year of first abuse,school,27.1
+1990–1999 year of first abuse,any,16.27
+1990–1999 year of first abuse,family,19.11
+1990–1999 year of first abuse,church,14.11
+1990–1999 year of first abuse,school,15.38
+2000+ year of first abuse,any,26.92
+2000+ year of first abuse,family,18.62
+2000+ year of first abuse,church,10.55
+2000+ year of first abuse,school,21.22
+Duration Only once abuse,any,48.99
+Duration Only once abuse,family,28.14
+Duration Only once abuse,church,35.71
+Duration Only once abuse,school,39.98
+Duration <1 year,any,23.86
+Duration <1 year,family,24.74
+Duration <1 year,church,30.77
+Duration <1 year,school,43.46
+Duration ≥1 year,any,21.39
+Duration ≥1 year,family,37.3
+Duration ≥1 year,church,28.09
+Duration ≥1 year,school,14.16
+Duration Unknown,any,5.76
+Duration Unknown,family,9.83
+Duration Unknown,church,5.44
+Duration Unknown,school,2.4
+Rape,any,37.03
+Rape,family,40.72
+Rape,church,32.54
+Rape,school,22.83
+Knows other victims of the same abuser,any,23.87
+Knows other victims of the same abuser,family,27.66
+Knows other victims of the same abuser,church,44.8
+Knows other victims of the same abuser,school,35.93
+Had told anyone about the event,any,52.45
+Had told anyone about the event,family,51.68
+Had told anyone about the event,church,41.81
+Had told anyone about the event,school,41.25
+Told Parents,any,19.03
+Told Parents,family,20.65
+Told Parents,church,15.21
+Told Parents,school,16.18
+Told Partner,any,15.71
+Told Partner,family,21.88
+Told Partner,church,10.1
+Told Partner,school,10.95
+Told Friend,any,14.98
+Told Friend,family,14.27
+Told Friend,church,7.46
+Told Friend,school,8.63
+Told Psychologist,any,10.58
+Told Psychologist,family,16.87
+Told Psychologist,church,8.34
+Told Psychologist,school,3.48
+Told Physician,any,4.77
+Told Physician,family,6.39
+Told Physician,church,3.46
+Told Physician,school,NA
+Told Person from the religious institution,any,0.98
+Told Person from the religious institution,family,0.96
+Told Person from the religious institution,church,4.01
+Told Person from the religious institution,school,1.79
+Told Police,any,7.11
+Told Police,family,8.34
+Told Police,church,5.53
+Told Police,school,5.33
+Told Lawyer,any,2.16
+Told Lawyer,family,3.3
+Told Lawyer,church,1.96
+Told Lawyer,school,NA
+Told Other,any,7.39
+Told Other,family,9.57
+Told Other,church,4.24
+Told Other,school,NA
+Number of Lifetime Abusers 1,any,71.55
+Number of Lifetime Abusers 1,family,76.61
+Number of Lifetime Abusers 1,church,46.85
+Number of Lifetime Abusers 1,school,77.21
+Number of Lifetime Abusers 2,any,14.1
+Number of Lifetime Abusers 2,family,12.64
+Number of Lifetime Abusers 2,church,22.25
+Number of Lifetime Abusers 2,school,6.13
+Number of Lifetime Abusers ≥ 3,any,14.35
+Number of Lifetime Abusers ≥ 3,family,10.75
+Number of Lifetime Abusers ≥ 3,church,30.9
+Number of Lifetime Abusers ≥ 3,school,16.67

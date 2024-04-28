@@ -1,0 +1,73 @@
+characteristics,sphere,sex,mean,low,up
+Total prevalence,family,women,5.5,4.91,6.08
+Total prevalence,family,men,1.4,1.15,1.65
+Total prevalence,church,women,0.34,0.2,0.48
+Total prevalence,church,men,1.28,0.93,1.64
+Total prevalence,school,women,0.31,0.19,0.44
+Total prevalence,school,men,0.32,0.21,0.43
+Age 18-29,family,women,4.06,3.28,4.84
+Age 18-29,family,men,1.7,1.03,2.37
+Age 18-29,church,women,0.59,0.09,1.08
+Age 18-29,church,men,1.02,0.16,1.88
+Age 18-29,school,women,0.37,0.11,0.63
+Age 18-29,school,men,0.57,0.16,0.97
+Age 30-59,family,women,6.63,5.85,7.41
+Age 30-59,family,men,1.6,1.26,1.94
+Age 30-59,church,women,0.33,0.13,0.52
+Age 30-59,church,men,0.81,0.5,1.13
+Age 30-59,school,women,0.28,0.14,0.42
+Age 30-59,school,men,0.19,0.08,0.31
+Age 60+,family,women,4.67,3.83,5.5
+Age 60+,family,men,1.03,0.68,1.38
+Age 60+,church,women,0.27,0.09,0.45
+Age 60+,church,men,1.81,1.13,2.49
+Age 60+,school,women,0.33,0.03,0.62
+Age 60+,school,men,0.41,0.2,0.62
+Education < High school,family,women,6.47,5.51,7.42
+Education < High school,family,men,1.5,1.04,1.96
+Education < High school,church,women,0.3,0.07,0.52
+Education < High school,church,men,1.46,0.75,2.17
+Education < High school,school,women,0.29,0.11,0.47
+Education < High school,school,men,0.31,0.12,0.5
+Education High school,family,women,5.51,4.62,6.4
+Education High school,family,men,1.57,1.1,2.04
+Education High school,church,women,0.29,0.04,0.54
+Education High school,church,men,1,0.23,1.77
+Education High school,school,women,0.2,0.04,0.36
+Education High school,school,men,0.28,0.08,0.47
+Education > High school,family,women,4.76,4.12,5.39
+Education > High school,family,men,1.23,0.93,1.53
+Education > High school,church,women,0.41,0.18,0.63
+Education > High school,church,men,1.3,0.86,1.73
+Education > High school,school,women,0.41,0.16,0.66
+Education > High school,school,men,0.35,0.18,0.53
+Job of Father Farmers and Self-employed,family,women,4.96,3.77,6.14
+Job of Father Farmers and Self-employed,family,men,1.39,0.8,1.97
+Job of Father Farmers and Self-employed,church,women,0.3,0.01,0.59
+Job of Father Farmers and Self-employed,church,men,0.89,0.31,1.48
+Job of Father Farmers and Self-employed,school,women,0.3,0.04,0.56
+Job of Father Farmers and Self-employed,school,men,0.16,NA,NA
+Job of Father Senior executive professionals,family,women,4.31,3.38,5.24
+Job of Father Senior executive professionals,family,men,1.15,0.64,1.65
+Job of Father Senior executive professionals,church,women,0.25,0,0.5
+Job of Father Senior executive professionals,church,men,0.77,0.28,1.25
+Job of Father Senior executive professionals,school,women,0.66,0.03,1.29
+Job of Father Senior executive professionals,school,men,0.15,NA,NA
+Job of Father Middle executive professionals and employees,family,women,5.37,4.46,6.29
+Job of Father Middle executive professionals and employees,family,men,1.01,0.66,1.36
+Job of Father Middle executive professionals and employees,church,women,0.4,0.09,0.7
+Job of Father Middle executive professionals and employees,church,men,1.5,0.76,2.24
+Job of Father Middle executive professionals and employees,school,women,0.19,0.01,0.36
+Job of Father Middle executive professionals and employees,school,men,0.39,0.15,0.62
+Job of Father Manual workers,family,women,5.59,4.82,6.37
+Job of Father Manual workers,family,men,1.41,1.05,1.77
+Job of Father Manual workers,church,women,0.22,0.05,0.4
+Job of Father Manual workers,church,men,1.47,0.72,2.22
+Job of Father Manual workers,school,women,0.26,0.11,0.41
+Job of Father Manual workers,school,men,0.22,0.07,0.37
+Job of Father Unemployed and other,family,women,7.45,5.96,8.94
+Job of Father Unemployed and other,family,men,2.66,1.57,3.76
+Job of Father Unemployed and other,church,women,0.75,0.1,1.4
+Job of Father Unemployed and other,church,men,1.55,0.51,2.59
+Job of Father Unemployed and other,school,women,0.37,0.04,0.7
+Job of Father Unemployed and other,school,men,0.89,0.34,1.44
