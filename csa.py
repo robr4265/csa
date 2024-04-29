@@ -28,7 +28,7 @@ print(char_first_csa)
 
 # %%
 # Make the prevelence interactive chart
-dropdown = alt.binding_select(options=prev_by_sphere["characteristics"].unique(), name="caracteristics")
+dropdown = alt.binding_select(options=prev_by_sphere["characteristics"].unique(), name="Explore Characteristics of Prevalence: ")
 
 selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown, value=[{'characteristics': 'Total prevalence'}])
 
@@ -38,6 +38,7 @@ chart = alt.Chart(prev_by_sphere).mark_bar().encode(
     xOffset='sex',
     color=alt.Color('sex', scale=alt.Scale(scheme='category20')),
 ).add_selection(selection).properties(
+    title='Prevalence of CSA and Sociodemographic Characteristics',
     width='container'
 )
 
@@ -47,14 +48,15 @@ prev_chart
 
 # %%
 # Make the first csa interactive chart
-dropdown = alt.binding_select(options=char_first_csa["characteristics"].unique(), name="caracteristics")
+dropdown = alt.binding_select(options=char_first_csa["characteristics"].unique(), name="Explore Characteristics of First CSA: ")
 
 selection = alt.selection(type='single', fields=['characteristics'], bind=dropdown, value=[{'characteristics': '0–9 age of first abuse'}])
 
 chart = alt.Chart(char_first_csa).mark_bar().encode(
     x=alt.X('sphere', title='Sphere of Socialization'),
-    y=alt.Y('value', title='First CSA (%)')
+    y=alt.Y('value', title='First CSA (%)'),
 ).add_selection(selection).properties(
+    title='Characteristics of First CSA',
     width='container'
 )
 
