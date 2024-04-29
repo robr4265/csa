@@ -7,7 +7,7 @@
     .vega-embed details, .vega-embed details summary { position: relative; }
     .separator { margin-top: 100px; }
     .center { display: flex; justify-content: center; }
-    .md-text { font-family: 'Arial'; font-size: 16px; padding: 0 10%;}
+    .md-text { font-family: 'Arial'; font-size: 16px; padding: 0 20%;}
     #vis1 details, #vis2 details { display: none; }
   </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -46,8 +46,6 @@
     import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
     document.getElementById('markdown-content').innerHTML =
       marked.parse(`# Sexual Violence in the Catholic Church, France 1950 – 2020
-**For the best experience, please view this project in a desktop browser at https://robr4265.github.io/csa/**
-
 ### Data
 
 Some time ago, I read in The New York Times about child abuse in the Catholic Church in France. The article mentioned that the estimate of abused children was over 200,000 from 1950 to 2020. I was intrigued by how the researchers got to this horrifically large number and thought that this was a case where Data Science was used for the betterment of humanity by exposing statistical information that irrefutably pointed to institutional and systematic actions that hurt the ones the Church is supposed to protect.
