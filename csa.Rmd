@@ -46,11 +46,20 @@ prev %>%
   filter(characteristics == "Total prevalence", sphere != "any") %>%
   ggplot(aes(x = sphere, y = mean, fill = sex)) +
   geom_col(position = "dodge") +
-  geom_errorbar(aes(ymin = low, ymax = up), width = 0.1, position = position_dodge(0.9))
+  geom_errorbar(aes(ymin = low, ymax = up), width = 0.1, position = position_dodge(0.9)) +
+  scale_fill_brewer(palette = "Paired") +
+  ylab("Prevalence of CSA (%)") +
+  theme(axis.title.x = element_blank()) +
+  labs(title = "Percentages of CSA Before the Age of 18 by Social Sphere")
 ```
 ```{r plot_first}
 first %>%
   filter(sphere == "church", str_detect(characteristics, "age of first abuse")) %>%
   ggplot(aes(x = characteristics, y = value, fill = sphere)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  scale_fill_brewer(palette = "Paired") +
+  ylab("(%)") +
+  theme(axis.title.x = element_blank()) +
+  labs(title = "% of Respondents who Experienced CSA in Church by Age of First Abuse") +
+  theme(legend.position = "none")
 ```
