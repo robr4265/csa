@@ -49,7 +49,8 @@ prev %>%
   geom_errorbar(aes(ymin = low, ymax = up), width = 0.1, position = position_dodge(0.9)) +
   scale_fill_brewer(palette = "Paired") +
   ylab("Prevalence of CSA (%)") +
-  theme(axis.title.x = element_blank())
+  theme(axis.title.x = element_blank()) +
+  labs(title = "Percentages of CSA Before the Age of 18 by Social Sphere")
 ```
 ```{r plot_first}
 first %>%
@@ -57,6 +58,8 @@ first %>%
   ggplot(aes(x = characteristics, y = value, fill = sphere)) +
   geom_col(position = "dodge") +
   scale_fill_brewer(palette = "Paired") +
-  ylab("Sample (%)") +
-  theme(axis.title.x = element_blank())
+  ylab("(%)") +
+  theme(axis.title.x = element_blank()) +
+  labs(title = "% of Respondents who Experienced CSA in Church by Age of First Abuse") +
+  theme(legend.position = "none")
 ```
